@@ -1,0 +1,19 @@
+Webcam.set({
+    width:350,
+    height:300,
+    image_format:"png",
+    png_quality:90
+    });
+    Camera=document.getElementById("Camera");
+    Webcam.attach("#Camera");
+    
+    function takesnapshot(){
+        Webcam.snap(function(data_uri){
+            document.getElementById("result").innerHTML="<img src='"+data_uri+"' id='captured_image'>"
+        });
+    }
+    console.log("ml5 version",ml5.version);
+    //classifier=ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/",modelloaded);
+    //function modelloaded(){
+       // console.log("Model is loaded");
+    //}
